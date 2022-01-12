@@ -2,17 +2,19 @@
 
 ## Project: Trading with Momentum
 
+### Summary of What I Learned
+
+I learned a few basic but essential concepts about implementing a trading strategy from this project. For instance, we can convert daily close prices to other frequencies and utilise them (via converting them to log returns) to construct momentum indicators. Then, these indicators can be used to generate trading signals, and through backtesting, we can project our annualised rate of return. However, it is of crucial importance to do statistical tests on these results since the results alone could be misleading. Hence, I also learned how to carry out a one-sample, one-sided t-test on the observed mean return, leading to a conclusion that the null hypotheses (H<sub>0</sub>) cannot be rejected. Thus, I became aware of the importance of statistical tests and that even though we used many data points, we must consider the possibility that a positive return is deceptive and may not represent the actual future returns.
+
 ## Table of content
 
 1. [Project Overview](#overview)
-2. [What I Learned](#learned)
-3. [Data Description](#data)
-4. [Trading Strategy](#strategy)
-5. [Results](#results)
-6. [Evaluation](#evaluation)
-7. [Conclusions](#conclusions)
-8. [Packages and Files](#packages)
-
+2. [Data Description](#data)
+3. [Trading Strategy](#strategy)
+4. [Results](#results)
+5. [Evaluation](#evaluation)
+6. [Conclusions](#conclusions)
+7. [Packages and Files](#packages)
 
 ***
 
@@ -20,9 +22,6 @@
 ### Project Overview
 
 This project teaches how to implement a trading strategy and evaluate its potential profitability. To that end, a universe of stocks (with a time range) and a textual description of how we can generate a trading signal (based on a momentum indicator) are provided for us by Udacity. These allow us to construct a particular trading signal for the given time range and apply it to our dataset, which produces the portfolio's expected returns. Then, using a statistical test on these returns, we determine whether our investment strategy contains alpha (i.e., the ability to beat the market).
-
-<a id='learned'></a>
-### What I Learned
 
 <a id='data'></a>
 ### Data Description
@@ -62,7 +61,7 @@ Hence, we first compute the t-statistic and then find its corresponding p-value,
 <a id='conclusion'></a>
 ### Conclusions
 
-We observed a p-value of 0.071916, which is greater than the &alpha; = 0.05 defied earlier. Since p>&alpha;, we cannot reject the null hypothesis that the actual mean return from the signal is zero, so the 271.45% Annualized Rate of Return may not reflect the future performance of our trading signal. Hence, this trading strategy does not contain alpha.
+We observed a p-value of 0.071916, which is greater than the &alpha; = 0.05 defied earlier. Since p>&alpha;, we cannot reject the null hypothesis that the actual mean return from the signal is zero, so the 4.02% Annualized Rate of Return may not reflect the future performance of our trading signal. Hence, this trading strategy does not contain alpha.
 
 <a id='packages'></a>
 ### Packages and Files
@@ -83,7 +82,7 @@ The necessary libraries defined in `requirements.txt` are the followings:
 - [python-dateutil==2.6.1](https://dateutil.readthedocs.io/en/stable/)
 - [pytz==2017.3](https://pythonhosted.org/pytz/)
 - [requests==2.18.4](http://docs.python-requests.org/en/master/)
-- [scipy==1.0.0](https://www.scipy.org/
+- [scipy==1.0.0](https://www.scipy.org/)
 - [scikit-learn==0.19.1](https://scikit-learn.org/stable/)
 - [six==1.11.0](https://github.com/benjaminp/six)
 - [tqdm==4.19.5](https://tqdm.github.io/)
